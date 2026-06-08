@@ -3,11 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 st.set_page_config(
-    page_title='Unit Circle and Sine Visualization',
+    page_title='단위원을 통해 알아보는 삼각함수',
     layout='wide',
 )
 
-st.title('단위원과 사인 함수 시각화')
+st.title('단위원을 통해 알아보는 삼각함수')
+st.subheader('단위원과 sin함수')
 
 angle_options = ['0', 'π/2', 'π', '3π/2', '2π']
 selected_angle = st.selectbox('각도를 선택하세요', angle_options)
@@ -94,7 +95,7 @@ with right_col:
     ax.set_ylabel('sin(x)')
     st.pyplot(fig)
 
-st.markdown('### 아래쪽: 단위원과 코사인 함수 (파란 곡선)')
+st.subheader('단위원과 cos함수')
 
 bottom_left, bottom_right = st.columns(2, gap='large')
 
