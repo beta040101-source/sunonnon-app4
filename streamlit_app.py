@@ -8,10 +8,10 @@ st.set_page_config(
 )
 
 st.title('단위원을 통해 알아보는 삼각함수')
-st.subheader('단위원과 sin함수')
 
 angle_options = ['0', 'π/2', 'π', '3π/2', '2π']
 selected_angle = st.selectbox('각도를 선택하세요', angle_options)
+st.subheader('단위원과 sin함수')
 
 angle_map = {
     '0': 0.0,
@@ -51,7 +51,7 @@ with left_col:
         ax.scatter([np.cos(angle_value)], [np.sin(angle_value)], color='red', s=80, zorder=5)
 
     ax.set_xlabel('x')
-    ax.set_ylabel('y')
+    ax.set_ylabel('y', rotation=0, labelpad=15)
     st.pyplot(fig)
 
 with right_col:
@@ -116,7 +116,7 @@ with bottom_left:
         ax.scatter([1.0], [0.0], color='red', s=70, zorder=5)
 
     ax.set_xlabel('x')
-    ax.set_ylabel('y')
+    ax.set_ylabel('y', rotation=0, labelpad=15)
     st.pyplot(fig)
 
 with bottom_right:
