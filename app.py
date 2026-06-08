@@ -59,9 +59,9 @@ with left_col:
         ax.scatter([endpoint_x], [endpoint_y], color='red', s=70, zorder=5)
 
     ax.set_xlabel('x')
-    ax.xaxis.set_label_coords(1.05, 0.02)
+    ax.xaxis.set_label_coords(1.05, 0.5)
     ax.set_ylabel('y', rotation=0, labelpad=15)
-    ax.yaxis.set_label_coords(0.02, 1.02)
+    ax.yaxis.set_label_coords(0.5, 1.05)
     st.pyplot(fig)
 
 # 사인 함수 그래프
@@ -130,9 +130,9 @@ with bottom_left:
         ax.scatter([1.0], [0.0], color='red', s=70, zorder=5)
 
     ax.set_xlabel('x')
-    ax.xaxis.set_label_coords(1.05, 0.02)
+    ax.xaxis.set_label_coords(1.05, 0.5)
     ax.set_ylabel('y', rotation=0, labelpad=15)
-    ax.yaxis.set_label_coords(0.02, 1.02)
+    ax.yaxis.set_label_coords(0.5, 1.05)
     st.pyplot(fig)
 
 with bottom_right:
