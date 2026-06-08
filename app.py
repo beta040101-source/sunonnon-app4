@@ -94,6 +94,7 @@ with right_col:
         ax.scatter([angle_value], [np.sin(angle_value)], color='red', s=70, zorder=5)
 
     ax.set_xlabel('x')
+    ax.xaxis.set_label_coords(1.05, -0.05)
     ax.set_ylabel('sin(x)', rotation=0, labelpad=15)
     ax.yaxis.set_label_coords(0.0, 1.05)
     st.pyplot(fig)
@@ -168,6 +169,7 @@ with bottom_right:
         ax.scatter([0.0], [1.0], color='red', s=70, zorder=5)
 
     ax.set_xlabel('x')
+    ax.xaxis.set_label_coords(1.05, -0.05)
     ax.set_ylabel('cos(x)', rotation=0, labelpad=15)
     ax.yaxis.set_label_coords(0.0, 1.05)
     st.pyplot(fig)
