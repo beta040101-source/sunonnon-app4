@@ -108,15 +108,18 @@ with bottom_left:
     ax.set_xticks([-1.0, -0.5, 0.0, 0.5, 1.0])
     ax.set_yticks([-1.0, -0.5, 0.0, 0.5, 1.0])
 
-    if angle_value != 0.0:
-        arc_x = np.cos(np.linspace(0, angle_value, 200))
-        arc_y = np.sin(np.linspace(0, angle_value, 200))
-        ax.plot(arc_x, arc_y, color='blue', linewidth=2.5)
-        endpoint_x = np.cos(angle_value)
-        endpoint_y = np.sin(angle_value)
-        ax.scatter([endpoint_x], [endpoint_y], color='red', s=70, zorder=5)
+    start_angle = np.pi / 2
+    end_angle = start_angle + angle_value
+
+    if angle_value == 0.0:
+        ax.scatter([0.0], [1.0], color='red', s=70, zorder=5)
     else:
-        ax.scatter([1.0], [0.0], color='red', s=70, zorder=5)
+        arc_x = np.cos(np.linspace(start_angle, end_angle, 200))
+        arc_y = np.sin(np.linspace(start_angle, end_angle, 200))
+        ax.plot(arc_x, arc_y, color='blue', linewidth=2.5)
+        endpoint_x = np.cos(end_angle)
+        endpoint_y = np.sin(end_angle)
+        ax.scatter([endpoint_x], [endpoint_y], color='red', s=70, zorder=5)
 
     ax.set_xlabel('x')
     ax.xaxis.set_label_coords(1.05, 0.5)
