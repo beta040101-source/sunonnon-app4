@@ -105,7 +105,7 @@ with bottom_left:
     circle_x = np.cos(theta)
     circle_y = np.sin(theta)
 
-    ax.plot(circle_x, circle_y, color='blue', linewidth=2)
+    ax.plot(circle_x, circle_y, color='black', linewidth=1)
     ax.axhline(0, color='black', linewidth=1)
     ax.axvline(0, color='black', linewidth=1)
 
@@ -116,15 +116,15 @@ with bottom_left:
     ax.set_xticks([-1.0, -0.5, 0.0, 0.5, 1.0])
     ax.set_yticks([-1.0, -0.5, 0.0, 0.5, 1.0])
 
-    if angle_value == 0.0:
-        ax.scatter([1.0], [0.0], color='red', s=70, zorder=5)
-    else:
+    if angle_value != 0.0:
         arc_x = np.cos(np.linspace(0, angle_value, 200))
         arc_y = np.sin(np.linspace(0, angle_value, 200))
         ax.plot(arc_x, arc_y, color='blue', linewidth=2.5)
         endpoint_x = np.cos(angle_value)
         endpoint_y = np.sin(angle_value)
         ax.scatter([endpoint_x], [endpoint_y], color='red', s=70, zorder=5)
+    else:
+        ax.scatter([1.0], [0.0], color='red', s=70, zorder=5)
 
     ax.set_xlabel('x')
     ax.set_ylabel('y')
@@ -135,7 +135,7 @@ with bottom_right:
 
     x = np.linspace(0, 2 * np.pi, 400)
     y = np.cos(x)
-    ax.plot(x, y, color='blue', linewidth=2)
+    ax.plot(x, y, color='black', linewidth=1)
 
     ax.axhline(0, color='black', linewidth=1)
     ax.axvline(0, color='black', linewidth=1)
@@ -150,13 +150,13 @@ with bottom_right:
     ax.set_xticklabels(tick_labels)
     ax.set_yticks([-1, 0, 1])
 
-    if angle_value == 0.0:
-        ax.scatter([0.0], [1.0], color='red', s=70, zorder=5)
-    else:
+    if angle_value != 0.0:
         x_blue = np.linspace(0, angle_value, 200)
         y_blue = np.cos(x_blue)
         ax.plot(x_blue, y_blue, color='blue', linewidth=2.5)
         ax.scatter([angle_value], [np.cos(angle_value)], color='red', s=70, zorder=5)
+    else:
+        ax.scatter([0.0], [1.0], color='red', s=70, zorder=5)
 
     ax.set_xlabel('x')
     ax.set_ylabel('cos(x)')
